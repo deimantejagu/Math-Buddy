@@ -1,0 +1,110 @@
+body {
+  /*background-image: url("photo-1557683311-eac922347aa1.jpg");*/
+  background-color: lightblue;
+}
+
+.menu {
+  color: black;
+  width: 50%;
+}
+
+.menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+}
+
+.menu a:hover {
+  background-color: #ccc;
+}
+
+.menu a.active {
+  background-color: black;
+  color: white;
+}
+
+#menuBtn {
+  display: inline-block;
+  margin-top: 2em;
+}
+
+#menuBtn a:link {
+  text-decoration: none;
+}
+
+#menuBtn a {
+  color: white;
+}
+
+#potemeNelygybesBtn {
+  display: inline-block;
+  margin-top: 2em;
+}
+
+#potemeAibesBtn {
+  display: inline-block;
+  margin-top: 2em;
+}
+
+#potemeRealusBtn {
+  display: inline-block;
+  margin-top: 2em;
+}
+
+#aibiuRatasImg {
+  width: 25%;
+  height: auto;
+}
+
+.sankirtaImg {
+  width: 25%;
+  height: auto;
+}
+
+.sajungaImg {
+  width: 25%;
+  height: auto;
+}
+
+.ABImg {
+  width: 25%;
+  height: auto;
+}
+
+.BAImg {
+  width: 25%;
+  height: auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5em;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.sakniesPav {
+  width: 14%;
+  height: 14%;
+}
+
+.trigubosSakniesPav {
+  width: 14%;
+  height: 14%;
+}
+
+.nelygPastaba{
+  position: relative;
+  left: 18%;
+}

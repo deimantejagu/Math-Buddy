@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.1/math.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Menu</title>
+</head>
+
+<body>
+  <div id="name">
+    <center>
+      <h1>Skaičiuotuvas</h1>
+    </center>
+  </div>
+
+  <center>
+
+    <!---------- Menu ---------->
+
+    <div class="menu" id="hideMenu">
+      <a class="active">Meniu</a>
+      <a onclick="nelygybes()">Nelygybės</a>
+      <a onclick="aibes()">Skaičių aibės</a>
+      <a onclick="realus()">Realieji skaičiai</a>
+    </div>
+
+    <!---------- Nelygybes ---------->
+
+    <div class="menu" id="nelygybes">
+      <a class="active">Meniu</a>
+      <a onclick="nelygybesPotemeTrupmena()">Trupmeninės nelygybės</a>
+      <a onclick="nelygybesPotemeKvadratas()">Kvadratinės nelygybės</a>
+      <a onclick="nelygybesPotemeModulis()">Nelygybės su moduliu</a>
+      <a onclick="nelygybesPotemeSistema()">Nelygybių sistemos</a>
+    </div>
+
+    <!---------- Aibes ---------->
+
+    <div class="menu" id="aibes">
+      <a class="active">Meniu</a>
+      <a onclick="aibesPotemeRatas()">Skaičių aibių ratas</a>
+      <a onclick="aibesPotemeSSS()">Sankirta, sąjunga ir skirtumas</a>
+      <a onclick="aibesPotemeReiskimas()">Periodinės trupmenos išreikštos paprastosiomis</a>
+    </div>
+
+    <!---------- Realieji skaiciai ---------->
+
+    <div class="menu" id="realus">
+      <a class="active">Meniu</a>
+      <a onclick="realusPotemeIracionalus()">Iracionalumo įrodymas</a>
+      <a onclick="realusPotemeLaipsnis()">Veiksmai su laipsniais</a>
+      <a onclick="realusPotemeSaknis()">Šaknies traukimas</a>
+      <a onclick="realusPotemeSaknisTrupmena()">Šaknies traukimas trupmenoje</a>
+    </div>
+  </center>
+
+  <!---------- Paveiksleliai ---------->
+
+  <center>
+    <div>
+      <img src="Aibiu ratas.png" alt="Aibiu ratas" id="aibiuRatasImg">
+    </div>
+
+    <div class="menu" id="aibesImg">
+      <a class="active">Veiksmai su skaičių aibėmis</a>
+      <a><b>Skaičių aibių pavyzdys:<br>A = {3; 4; 5; 7}<br> B = {2; 4; 7}</b></a>
+      <a><img src="sankirta.png" alt="sankirta" class="sankirtaImg"><b>Sankirta:</b><br>A ∩ B = {4; 7}</a>
+      <a><img src="sajunga.png" alt="sajunga" class="sajungaImg"><b>Sąjunga:</b><br>A ∪ B = {2; 3; 4; 5; 7}</a>
+      <a><img src="A atimti B.png" alt="A atimti B" class="ABImg"><b>Skirtumas:</b><br>A \ B = {3; 5}</a>
+      <a><img src="B atimti A.png" alt="B atimti A" class="BAImg"><b>Skirtumas:</b><br>B \ A = {2}</a>
+    </div>
+
+    <div class="menu" id="aibiuTipai">
+      <a class="active">Aibių tipai ir jų pavyzdžiai</a>
+      <a>N - natūralieji skaičiai (1; 2; 3)</a>
+      <a>Z - sveikieji skaičiai (-1; -2; 0; 1; 2)</a>
+      <a>Q - racionalieji skaičiai (Z aibė + trupmenos (a = m/n; m ∈ Z ir n ∈ N))</a>
+      <a>I - iracionalieji skaičiai (&radic;3; &Pi; - pi; e - Oilerio skaičius (a &ne; m/n; m ∈ Z ir n ∈ N)</a>
+      <a>R - realieji skaičiai (Q + I)</a>
+    </div>
+
+    <div class="menu" id="iracionalumoIrodymas">
+      <a class="active">Iracionalumo įrodymas</a>
+      <a>
+        <b>Įrodyti: &radic;2 iracionalus skaičius</b> <br> <br>
+        <b>1) </b>Darome prielaidą, kad &radic;2 - racionalus skaičius <br> <br>
+        <b>2) </b>Reiškinį <b>&radic;2 = m/n</b> keliame kvadratu: <br>
+        (&radic;2 = m/n)^2 <br> <br>
+        <b>3) </b>Reiškinį <b>2 = (m/n)^2</b> padauginame iš vardiklio: <br>
+        (2 = (m/n)^2) * n^2 <br> <br>
+        <b>4) </b> Gauname: <b>2n^2 = m^2</b> <br> <br>
+        <b>5) </b>Iš šio reiškinio <b>(2n^2 = m^2)</b> matome, kad <b>m</b> dalijasi iš 2 <br> <br>
+        <b>6) </b> <b>m</b> prilyginame <b>2k</b>: <br>
+        <b>m = 2k</b> <br> <br>
+        <b>7) </b> Todėl <b>2n^2 = (2k)^2</b> <br> <br>
+        <b>8) </b> Gauname: <b>2n^2 = 4k^2</b> <br> <br>
+        <b>9) </b> Reiškinį <b>2n^2 = 4k^2</b> padaliname iš 2 <br>
+        (2n^2 = 4k^2) / 2 <br> <br>
+        <b>10) </b> Gauname: <b>n^2 = 2k^2</b> <br> <br>
+        <b>11) </b>Iš šio reiškinio <b>(n^2 = 2k^2)</b> matome, kad <b>n</b> taip pat dalijasi iš 2 <br> <br>
+        Vadinasi, <b>m/n</b> yra suprastinama trupmena, nes <b>m</b> ir <b>n</b> dalijasi iš 2. <b>
+          <font color="red">Mūsų prielaida neteisinga</font>
+        </b> <br> <br>
+        <b>Išvada: &radic;2 yra iracionalusis skaičius</b> <br>
+      </a>
+      <a>
+        <b>
+          <font color="green">Matematinių simbolių reikšmės:</font>
+        </b> <br>
+        <li> <b>&radic;</b> - šaknis</li>
+        <li> <b>^2</b> - kėlimas kvadratu</li>
+        <li> <b>*</b> - daugybos ženklas</li>
+        <li> <b>/</b> - dalybos ženklas (trupmenos brukšnys)</li>
+        <li> <b>k, m, n</b> - sugalvoti kintamieji. <b>
+            <font color="red">Pastaba! </font>
+          </b>(gali būti ir kitokios raidės)</li>
+      </a>
+    </div>
+
+    <div class="menu" id="kelimasLaipsniu">
+      <a class="active">Kėlimas laipsniu</a>
+      <a>
+        <font color="red">(</font><b>X</b>^m<font color="red">)</font>^n = <b>X</b>^m<font color="red">*</font>n <br>
+        <br><button type="button" class="btn btn-primary" onclick="skaiciuoti()">Skaičiuoti</button>
+      </a>
+      <a><b>X</b>^m <font color="red">*</font> <b>X</b>^n = <b>X</b>^m<font color="red">+</font>n <br> <br><button
+          type="button" class="btn btn-primary" onclick="skaiciuoti1()">Skaičiuoti</button></a>
+      <a><b>X</b>^m <font color="red">/</font> <b>X</b>^n = <b>X</b>^m<font color="red">-</font>n <br> <br><button
+          type="button" class="btn btn-primary" onclick="skaiciuoti2()">Skaičiuoti</button></a>
+      <a><b>1</b>
+        <font color="red">/</font> <b>X</b>^n = <b>X</b>^<font color="red">-</font>n <br> <br><button type="button"
+          class="btn btn-primary" onclick="skaiciuoti3()">Skaičiuoti</button>
+      </a>
+      <a>(<b>x / <font color="red">y</font></b>)^n = (<b>
+          <font color="red">y</font> / x
+        </b>)^<font color="red">-</font>n <br> <br><button type="button" class="btn btn-primary"
+          onclick="skaiciuoti4()">Skaičiuoti</button></a>
+      <a>
+        <b>
+          <font color="green">Matematinių simbolių reikšmės:</font>
+        </b> <br>
+        <li> <b>^</b> - kėlimas laipsniu</li>
+        <li> <b>*</b> - daugybos ženklas</li>
+        <li> <b>/</b> - dalybos ženklas (trupmenos brukšnys)</li>
+        <li> <b>x, y, m, n</b> - sugalvoti kintamieji. <b>
+            <font color="red">Pastaba! </font>
+          </b>(gali būti ir kitokios raidės)</li>
+      </a>
+    </div>
+
+    <div id="kelimasLaipsniuSK">
+      <br> <br>
+      <input type="number" id="kelimasLaipsniupagrindas1" placeholder="1 laipsnio pagrindas (X)">
+      <input type="number" id="kelimasLaipsniupagrindas2" placeholder="2 laipsnio pagrindas (Y)">
+      <input type="number" id="kelimasLaipsniurodiklis1.1" placeholder="1 laipsnio rodiklis (m)">
+      <input type="number" id="kelimasLaipsniurodiklis1.2" placeholder="2 laipsnio rodiklis (n)"> <br> <br>
+      <button type="button" class="btn btn-danger" onclick="isvalytiRez()">Išvalyti rezultatą</button>
+      <button type="button" class="btn btn-primary" onclick="uzdarytiLaukelius()">Uždaryti laukelius</button>
+      <b>
+        <h3 id="rez1">Sutrumpintas rezultatas</h3>
+      </b>
+      <b>
+        <h3 id="rez2">Pilnas rezultatas</h3>
+      </b>
+    </div>
+
+    <div id="trupmenosVertimas">
+      <input type="text" id="periodinetrupmena" placeholder="Įveskite trupmeną">
+      <button type="button" class="btn btn-primary" onclick="trupmenosVertimas()">Skaičiuoti</button>
+      <button type="button" class="btn btn-danger" onclick="isvalytiRezTrupmenos()">Išvalyti</button>
+
+      <h1>
+        <span id="sveikasSk"></span>
+        <sup>
+          <span id="skaitiklis"></span>
+        </sup>
+        <span id="zenklas" style="display: none">&frasl;</span>
+        <sub>
+          <span id="vardiklis"></span>
+        </sub>
+      </h1>
+
+    </div>
+
+    <div id="sakniesTraukimasBlokas">
+
+      <div>
+        <b>
+          <h2>Kvadratinės šaknies traukimas</h2>
+        </b>
+      </div>
+
+      <div>
+        <input type="number" id="vienaKvSaknis" placeholder="Pavyzdys: &#8730;29">
+        <button type="button" class="btn btn-primary" onclick="vienaKvadSaknis()">Skačiuoti</button>
+        <button type="button" class="btn btn-danger" onclick="isvalytiRezVienaKvSaknis()">Išvalyti</button>
+      </div>
+      <br>
+      <br>
+
+      <div>
+        <b>
+          <h2>Kvadratinės šaknies traukimas šaknyje</h2>
+        </b>
+      </div>
+
+      <div>
+        <img class="sakniesPav" src="saknis_pvz.png">
+      </div>
+      <br>
+
+      <div>
+        <input type="number" id="sk1" placeholder="4">
+        <input type="text" id="simb1" placeholder="*" style="width: 40px">
+        <input type="number" id="sakn1" placeholder="29">
+        <input type="text" id="simb2" placeholder="-" style="width: 40px">
+        <input type="number" id="sk2" placeholder="12">
+        <input type="text" id="simb3" placeholder="*" style="width: 40px">
+        <input type="number" id="sakn2" placeholder="5">
+        <button type="button" class="btn btn-primary" onclick="skaiciuojaSaknisSaknyje()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger" onclick="isvalytiRezDviKvSaknys()">Išvalyti</button>
+      </div>
+      <br>
+      <br>
+
+      <div>
+        <b>
+          <h2>Trigubos kvadratinės šaknies traukimas</h2>
+        </b>
+      </div>
+
+      <div>
+        <img class="trigubosSakniesPav" src="trigubos_saknies_pvz.png">
+      </div>
+      <br>
+
+      <div>
+        <input type="number" id="saknTri1" placeholder="5">
+        <input type="number" id="saknTri2" placeholder="4">
+        <input type="number" id="saknTri3" placeholder="3">
+        <button type="button" class="btn btn-primary" onclick="trigubosSakniesTraukimas()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger" onclick="isvalytiRezTrysKvSaknys()">Išvalyti</button>
+      </div>
+
+      <div>
+        <b>
+          <h3 id="sakniesRez">Rezultatas</h3>
+        </b> <b>
+          <font color="red">Pastaba! </font> Visi laukeliai turi būti užpildyti
+        </b>
+      </div>
+
+    </div>
+
+    <!--- Saknies traukimas trupmenoje -->
+
+    <div id="sakniesTraukimasTrupmenojeBlokas">
+      <div>
+        <img class="trigubosSakniesPav" src="viena_trupmenine_saknis.png">
+      </div>
+      <br>
+
+      <div>
+        <input type="number" id="skait" placeholder="9">
+        <input type="number" id="vard" placeholder="17">
+        <button type="button" class="btn btn-primary" onclick="sakniesTraukimasTrupmenoje()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger" onclick=" isvalytisakniesTraukimasTrupmenoje()">Išvalyti</button>
+      </div>
+
+      <div>
+        <img class="trigubosSakniesPav" src="saknies_traukimas_trupmenoje.png">
+      </div>
+      <br>
+
+      <div>
+        <input type="number" id="trup1" placeholder="9">
+        <input type="number" id="trup2" placeholder="17">
+        <input type="text" id="sim1" placeholder="+" style="width: 40px">
+        <input type="number" id="skaicius1" placeholder="3">
+        <input type="text" id="sim2" placeholder="*" style="width: 40px">
+        <input type="number" id="saknis1" placeholder="10">
+        <button type="button" class="btn btn-primary" onclick="sakniesTraukimasTrupmenosEiluteje()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger"
+          onclick=" isvalytisakniesTraukimasTrupmenosEiluteje()">Išvalyti</button>
+      </div>
+
+      <div>
+        <h3>
+          <sup>
+            <span id="trupRez"></span>
+          </sup>
+          <span id="zenklas1" style="display: none">&frasl;</span>
+          <sub>
+            <span id="trupRez1"></span>
+          </sub>
+        </h3>
+      </div>
+
+    </div>
+
+  </center>
+
+  <!--- Nelygybes su moduliu -->
+
+  <center>
+
+    <div id="nelygybesSuModuliu">
+      <br> <br>
+
+      <div class="menu" id="modulioTaisykles">
+        <a class="active">Nelygybių su moduliu taisyklės</a>
+        <a> <b>|x| = 3</b> <br> ats.: x = -3; x = 3</a>
+        <a> <b>|x| < 3</b> <br> ats.: -3 < x < 3</a>
+                <a> <b>|x| > 3</b> <br> ats.: x < -3; x> 3</a>
+                <a> <b>|x| = -3</b> <br> ats.: &empty;</a>
+                <a> <b>|x| < -3</b> <br> ats.: &empty;</a>
+                <a> <b>|x| > -3</b> <br> ats.: x &#8714; R</a>
+      </div>
+      <br> <br>
+
+      <div>
+        </b><input id="nezinomasis" placeholder="3x - 2">
+        <input type="text" id="modulioZenklas" placeholder=">">
+        <input type="number" id="zinomasis" placeholder="3">
+        <button type="button" class="btn btn-primary" onclick="nelygybesSuModuliu()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger" onclick="isvalytiNelygybesSuModuliu()">Išvalyti</button>
+        <br> <br>
+        <h5 class="nelygPastaba">
+          <b>
+            <font color="red">Pastaba! </font>
+          </b> Skaičiai turi būti vedami tokia pat tvarka, kaip nurodyta laukeliuose (Kintamąjį visada vedame <b>X</b>)
+        </h5>
+      </div>
+      <h3 id="modulisRez"></h3>
+    </div>
+
+
+    <!--- Trupmenines nelygybes -->
+
+    <div id="trupmeninesNelygybes">
+
+      <div>
+        <br> <br>
+        <!--- Trupmenines nelygybes Pvz1-->
+
+        <div>
+          <img class="trupNelygPav" src="trupNelygPvz1.png">
+        </div>
+
+        <input id="nelygSkaitiklis" placeholder="3x - 2">
+        <input id="nelygVardiklis" placeholder="x - 2">
+        <input type="text" id="nelygZenklas" placeholder="<">
+        <input type="number" id="nelygZinomasis" placeholder="2">
+        <button type="button" class="btn btn-primary" onclick="trupNelygybesPvz1()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger" onclick="isvalytiTrupmeninesNelygybesPvz1()">Išvalyti</button>
+        <br> <br>
+        <h5 class="nelygPastaba">
+          <b>
+            <font color="red">Pastaba! </font>
+          </b> Skaičiai turi būti vedami tokia pat tvarka, kaip nurodyta laukeliuose (Kintamąjį visada vedame <b>X</b>)
+        </h5>
+
+        <!--- Trupmenines nelygybes Pvz2-->
+
+        <div>
+          <img class="trupNelygPav" src="trupNelygPvz2.png">
+        </div>
+
+        <input id="skaitiklisPirmaDalis" placeholder="x - 2">
+        <input id="skaitiklisAntraDalis" placeholder="x - 5">
+        <input id="vardiklis1" placeholder="x - 4">
+        <input type="text" id="zenklas2" placeholder=">">
+        <input type="number" id="zinomasis1" placeholder="0">
+        <button type="button" class="btn btn-primary" onclick="trupNelygybesPvz2()">Skaičiuoti</button>
+        <button type="button" class="btn btn-danger" onclick="isvalytiTrupmeninesNelygybesPvz2()">Išvalyti</button>
+        <br> <br>
+        <h5 class="nelygPastaba">
+          <b>
+            <font color="red">Pastaba! </font>
+          </b> Skaičiai turi būti vedami tokia pat tvarka, kaip nurodyta laukeliuose (Kintamąjį visada vedame <b>X</b>)
+        </h5>
+
+
+      </div>
+      <h3 id="trupNelygRez"></h3>
+    </div>
+
+  </center>
+
+  <center>
+
+    <!---------- Menu mygtukas ---------->
+
+    <div id="menuBtn">
+      <button type="button" class="btn btn-danger" </button>
+        <a href="menu.html" class="active">Grįžti į meniu</a>
+    </div>
+
+    <!---------- Nelygybiu mygtukas ---------->
+
+    <div id="potemeNelygybesBtn">
+      <button type="button" class="btn btn-success" </button>
+        <a class="active" onclick="griztiINelygybesPoteme()">Grįžti į potemes</a>
+    </div>
+
+    <!---------- Aibiu mygtukas ---------->
+
+    <div id="potemeAibesBtn">
+      <button type="button" class="btn btn-success" </button>
+        <a class="active" onclick="griztiIAibesPoteme()">Grįžti į potemes</a>
+    </div>
+
+    <!---------- Realiuju skaiciu mygtukas ---------->
+
+    <div id="potemeRealusBtn">
+      <button type="button" class="btn btn-success" </button>
+        <a class="active" onclick="griztiIRealusPoteme()">Grįžti į potemes</a>
+    </div>
+  </center>
+
+  <script type="text/javascript" src="aibes.js"></script>
+
+</body>
+
+</html>
